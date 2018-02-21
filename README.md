@@ -11,6 +11,11 @@ I **highly recommend** you familiarize yourself with the test application found 
 1. Navigate to this repository's root folder
 1. Run `npm install`
 1. Run `npm run build`
+1. Place breakpoint at `src/contracts/sample.ts` line 42
+1. Review the [current limitations](https://gitlab.com/seeseplusplus/vscode-sdb-debug/#current-limitations-of-both-sdb-and-sdb-vs-code-extension) of the debugger/extension
+1. Run the `SDB & Test` launch configuration
+1. ???
+1. Profit.
 
 ## Launch Configuration
 Since this extension doesn't handle the compilation and linking of your contracts for you, you must treat its launch configuration as an `attach` configuration (but the type is actually `launch`). You can see the launch configuration setup for this [test application](https://gitlab.com/seeseplusplus/vscode-sdb-debug/blob/master/test/test.ts) can be found in [.vscode/launch.json](https://gitlab.com/seeseplusplus/vscode-sdb-debug/blob/master/.vscode/launch.json#L24-30). Also in that file you can see a compound configuration which runs both my `Debug Solidity` and `Tests` configurations; this gives me the ability to just press `F5`/run to get started quickly.
