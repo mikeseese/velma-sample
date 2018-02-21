@@ -38,26 +38,7 @@ contract Sample {
         return v;
     }
 
-    struct s {
-        uint a;
-    }
-
-    struct c {
-        uint a;
-    }
-
     function test5() public {
-        uint8[5] memory crazy;
-        crazy[0] = 1;
-        crazy[1] = 2;
-        crazy[2] = 3;
-        crazy[3] = 4;
-        crazy[4] = 5;
-        s memory wtf;
-        s memory wtf2;
-        c memory wtf3;
-        wtf.a = 0;
-        wtf2.a = 10;
         uint256 newVal = 108;
         uint256 nextVal = newVal / 2;
         newVal += 1;
