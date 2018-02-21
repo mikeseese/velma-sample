@@ -1,0 +1,52 @@
+{
+  "name": "sdb-sample",
+  "displayName": "SDB Sample Project",
+  "version": "1.0.0",
+  "publisher": "SeesePlusPlus",
+  "description": "Visual Studio Code debug adapter for the sdb (Solidity Debugger) runtime",
+  "author": {
+    "name": "Mike Seese",
+    "email": "seesemichaelj@gmail.com"
+  },
+  "keywords": [
+    "solidity",
+    "debug",
+    "ethereum",
+    "sdb",
+    "sample"
+  ],
+  "engines": {
+    "node": "^7.9.0"
+  },
+  "categories": [
+    "Debuggers"
+  ],
+  "dependencies": {
+    "ganache-core": "git+https://github.com/seeseplusplus/ganache-core.git#introduce-sdb",
+    "mocha": "^3.5.0",
+    "path": "^0.12.7",
+    "solc": "^0.4.20",
+    "web3": "^1.0.0-beta.30"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.0.54",
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "build": "tsc -p ./test",
+    "tslint": "tslint ./test/*.ts",
+    "test": "mocha --inspect-brk -u tdd ./out/test/"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@gitlab.com/seeseplusplus/sdb-sample.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/seeseplusplus/sdb-sample/issues"
+  },
+  "homepage": "https://gitlab.com/seeseplusplus/sdb-sample#README"
+}

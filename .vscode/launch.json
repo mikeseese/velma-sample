@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "sdb",
+      "request": "launch",
+      "name": "SDB",
+      "stopOnEntry": false,
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Tests",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "test",
+        "--inspect=60000",
+        "--debug-brk"
+      ],
+      "port": 9229
+    },
+  ],
+  "compounds": [
+    {
+      "name": "SDB & Test",
+      "configurations": [ "SDB", "Tests" ]
+    }
+  ]
+}
