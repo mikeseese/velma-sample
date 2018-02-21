@@ -52,16 +52,18 @@ contract Sample {
     }
 
     function test6() public {
+        uint[5] memory t0;
         bool t1;
         int8 t2;
         address t3;
         byte t4;
-        bytes32 t5;
+        bytes5[2] memory t5;
+        t0[0] = 7;
         t1 = true;
         t2 = -1;
         t3 = msg.sender;
         t4 = byte(2);
-        t5 = "hello";
+        t5[0] = "hello";
         t1 = false; // for breakpoint purposes
     }
 }
