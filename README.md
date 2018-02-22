@@ -16,7 +16,7 @@ I **highly recommend** you familiarize yourself with the test application found 
 1. Run the `SDB & Test` launch configuration
 1. ???
 1. Profit.
-1. Once you've seen around test5(), I suggest taking a look at test6(). Change line 100 in `test/test.ts` to `return sampleInstance.methods.test6().call({from: accounts[0], gas: 3411592});` and add a breakpoint at `src/contracts/sample.sol` line 56 and rerun the test
+1. Once you've seen around test5(), I suggest taking a look at test6(). Change line 100 in `test/test.ts` to `return sampleInstance.methods.test6().call({from: accounts[0], gas: 3411592});`, run `npm run build`, and add a breakpoint at `src/contracts/sample.sol` line 56 and rerun the test
 
 ## Launch Configuration
 Since this extension doesn't handle the compilation and linking of your contracts for you, you must treat its launch configuration as an `attach` configuration (but the type is actually `launch`). You can see the launch configuration setup for this [test application](https://gitlab.com/seeseplusplus/vscode-sdb-debug/blob/master/test/test.ts) can be found in [.vscode/launch.json](https://gitlab.com/seeseplusplus/vscode-sdb-debug/blob/master/.vscode/launch.json#L24-30). Also in that file you can see a compound configuration which runs both my `Debug Solidity` and `Tests` configurations; this gives me the ability to just press `F5`/run to get started quickly.
