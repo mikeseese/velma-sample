@@ -2,11 +2,10 @@ pragma solidity ^0.4.2;
 
 contract Sample {
     uint a;
-    uint[] b;
+    uint[3] b;
 
     function Sample() public {
         a = 17;
-        b = new uint[](3);
         b[0] = 9;
         b[1] = 8;
         b[2] = 7;
@@ -19,13 +18,11 @@ contract Sample {
     }
 
     function test2() public {
-        b.push(0);
         a = 0;
     }
 
     function test3() public {
         a = test3a();
-        b.push(test3a());
         a = 0;
     }
 
@@ -64,7 +61,6 @@ contract Sample {
         bytes5[2] memory t5;
         uint t6;
         t6 = a;
-        b.push(6);
         t0[0] = 7;
         t1 = true;
         t2 = -1;
