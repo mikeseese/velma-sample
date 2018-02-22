@@ -5,7 +5,11 @@ contract Sample {
     uint[] b;
 
     function Sample() public {
-        a = 0;
+        a = 17;
+        b = new uint[](3);
+        b[0] = 9;
+        b[1] = 8;
+        b[2] = 7;
     }
 
     function test1() public {
@@ -58,6 +62,9 @@ contract Sample {
         address t3;
         byte t4;
         bytes5[2] memory t5;
+        uint t6;
+        t6 = a;
+        b.push(6);
         t0[0] = 7;
         t1 = true;
         t2 = -1;
