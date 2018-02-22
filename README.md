@@ -7,6 +7,7 @@ I **highly recommend** you familiarize yourself with the test application found 
 
 ## Usage
 1. Make sure you have the [SDB VS Code Extension](https://gitlab.com/seeseplusplus/vscode-sdb-debug) installed
+1. Make sure you got the [prerequisites for SDB](https://gitlab.com/seeseplusplus/vscode-sdb-debug#prerequisites) installed
 1. Clone this repository
 1. Navigate to this repository's root folder
 1. Run `npm install`
