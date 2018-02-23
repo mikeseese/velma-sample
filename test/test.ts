@@ -4,6 +4,7 @@ import { join as joinPath } from "path";
 import { readFileSync } from "fs";
 
 const Web3 = require("web3");
+const async = require("async");
 
 describe("SdbSampleTest", () => {
     const sourceRoot = joinPath(__dirname, "../../src/contracts/"); // take into consideration this is in the output folder
@@ -82,17 +83,34 @@ describe("SdbSampleTest", () => {
         });
     });
 
-    before("link debug symbols", (callback) => {
+    before("link compiler output", (callback) => {
         const sdbHook = ganacheProvider.manager.state.sdbHook;
         if (sdbHook) {
-            sdbHook.linkCompilerOutput(sourceRoot, compilerOutput);
-            const keys = Object.keys(addressMapping);
-            for (let i = 0; i < keys.length; i++) {
-                const contractName = keys[i];
-                sdbHook.linkContractAddress(contractName, addressMapping[keys[i]]);
-            }
+            sdbHook.linkCompilerOutput(sourceRoot, compilerOutput, callback);
         }
-        setTimeout(callback, 1000);
+        else {
+            callback("sdbhook isn't defined. are you sure testrpc/ganache-core was initialized properly?");
+        }
+    });
+
+    before("link contract addresses", (callback) => {
+        const sdbHook = ganacheProvider.manager.state.sdbHook;
+        if (sdbHook) {
+            const keys = Object.keys(addressMapping);
+            async.each(keys, (contractName, callback) => {
+                sdbHook.linkContractAddress(contractName, addressMapping[contractName], callback);
+            }, (err) => {
+                if (err) {
+                    callback(err);
+                }
+                else {
+                    callback();
+                }
+            });
+        }
+        else {
+            callback("sdbhook isn't defined. are you sure testrpc/ganache-core was initialized properly?");
+        }
     });
 
     it("#sdbTest", async () => {
