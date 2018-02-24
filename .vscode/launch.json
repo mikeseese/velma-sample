@@ -6,7 +6,7 @@
       "request": "launch",
       "name": "SDB",
       "stopOnEntry": false,
-      "port": 8456
+      "port": 8455
     },
     {
       "type": "node",
@@ -20,7 +20,7 @@
       ],
       "port": 9229,
       "env": {
-        "SDB_PORT": "8456"
+        "SDB_PORT": "8455"
       }
     },
   ],
