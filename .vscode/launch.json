@@ -6,6 +6,7 @@
       "request": "launch",
       "name": "SDB",
       "stopOnEntry": false,
+      "port": 8456
     },
     {
       "type": "node",
@@ -17,7 +18,10 @@
         "--inspect=60000",
         "--debug-brk"
       ],
-      "port": 9229
+      "port": 9229,
+      "env": {
+        "SDB_PORT": "8456"
+      }
     },
   ],
   "compounds": [

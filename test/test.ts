@@ -9,6 +9,7 @@ const async = require("async");
 describe("SdbSampleTest", () => {
     const sourceRoot = joinPath(__dirname, "../../src/contracts/"); // take into consideration this is in the output folder
     const contractPath = joinPath(sourceRoot, "sample.sol");
+    const sdbPort = process.env.SDB_PORT ? parseInt(process.env.SDB_PORT) : null;
     let web3;
     let ganacheProvider;
     let compilerOutput: CompilerOutput;
@@ -19,9 +20,13 @@ describe("SdbSampleTest", () => {
     let addressMapping = {};
 
     before("initialize/connect to testrpc/ganache-core", (callback) => {
-        ganacheProvider = provider({
+        let ganacheOptions: any = {
             sdb: true
-        }, callback);
+        };
+        if (sdbPort !== null) {
+            ganacheOptions.sdbPort = sdbPort;
+        }
+        ganacheProvider = provider(ganacheOptions, callback);
     });
 
     before("set web3 provider", (callback) => {
