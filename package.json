@@ -22,6 +22,7 @@
     "Debuggers"
   ],
   "dependencies": {
+    "async": "^2.6.0",
     "ganache-core": "git+https://gitlab.com/seeseplusplus/ganache-core.git#introduce-sdb",
     "mocha": "^3.5.0",
     "path": "^0.12.7",
