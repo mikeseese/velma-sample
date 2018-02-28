@@ -44,17 +44,17 @@ contract Sample {
         uint256 nextVal = newVal / 2;
         newVal += 1;
         uint256 priorVal = nextVal * 2;
-        a = test5a(priorVal);
+        a = test5a(priorVal, nextVal);
     }
 
-    function test5a(uint _val) private pure returns (uint) {
-        uint nextVal = _val * 2;
+    function test5a(uint _val, uint v2) private pure returns (uint) {
+        uint nextVal = _val * 2 + v2;
         return nextVal;
     }
 
     function test6() public {
         uint[5] memory t0;
-        bool t1;
+        bool t1 = true;
         int8 t2;
         address t3;
         byte t4;
@@ -64,6 +64,7 @@ contract Sample {
         t0[0] = 7;
         t1 = true;
         t2 = -1;
+        t2 = 5;
         t3 = msg.sender;
         t4 = byte(2);
         t5[0] = "hello";
