@@ -23,11 +23,24 @@ contract Sample {
 
     function test3() public {
         a = test3a();
-        a = 0;
+        a = test3c();
+        a = test3d();
     }
 
     function test3a() private pure returns (uint) {
-        return 7;
+        return test3b();
+    }
+
+    function test3b() private pure returns (uint) {
+        return 2;
+    }
+
+    function test3c() private pure returns (uint) {
+        return 3;
+    }
+
+    function test3d() private pure returns (uint) {
+        return 4;
     }
 
     function test4() public {
@@ -69,5 +82,9 @@ contract Sample {
         t4 = byte(2);
         t5[0] = "hello";
         t1 = false; // for breakpoint purposes
+    }
+
+    function test7() public {
+        this.delegatecall(keccak256("test3()"));
     }
 }
