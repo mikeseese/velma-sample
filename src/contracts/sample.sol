@@ -1,8 +1,20 @@
-pragma solidity ^0.4.2;
+pragma solidity 0.4.18;
 
-contract Sample {
+import "test.sol";
+
+contract blah {
+    uint c;
+}
+
+contract Sample is Test, blah {
     uint a;
     uint[3] b;
+
+    struct s {
+        uint8 test;
+        uint256 foo;
+        address bar;
+    }
 
     function Sample() public {
         a = 17;
@@ -86,5 +98,40 @@ contract Sample {
 
     function test7() public {
         this.delegatecall(keccak256("test3()"));
+    }
+
+    function test8() public {
+        test0(20);
+    }
+
+    function test9() public {
+        s memory sampleStruct;
+        sampleStruct.test = 7;
+        sampleStruct.foo = 1337;
+        sampleStruct.bar = 0x01234567890123456789;
+    }
+
+    function test10() public {
+        bool v1;
+        bool[1] v2;
+        bool[] v3;
+        bool[1][1] memory v4;
+        bool[] memory v5;
+        bool[][] v6;
+        string memory v7;
+        string[1] v8;
+        bytes memory v9;
+        bytes[1] memory v10;
+        v1 = true;
+        v2[0] = true;
+        v3.push(true);
+        v4[0][0] = true;
+        v5 = new bool[](1);
+        v5[0] = true;
+        v6.push([true]);
+        v7 = "";
+        v8[0] = "";
+        v9[0] = 0;
+        v10[0][0] = 0;
     }
 }

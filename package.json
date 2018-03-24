@@ -26,7 +26,7 @@
     "ganache-core": "git+https://gitlab.com/seeseplusplus/ganache-core.git#introduce-sdb",
     "mocha": "^3.5.0",
     "path": "^0.12.7",
-    "solc": "^0.4.20",
+    "solc": "0.4.18",
     "web3": "^1.0.0-beta.30"
   },
   "devDependencies": {
