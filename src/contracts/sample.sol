@@ -4,11 +4,18 @@ import "test.sol";
 
 contract blah {
     uint c;
+
+    function doCalc(uint v) public returns (uint) {
+        uint h = v * 2;
+        return h;
+    }
 }
 
 contract Sample is Test, blah {
     uint a;
-    uint[3] b;
+    uint16[3] b;
+
+    s[2] d;
 
     struct s {
         uint8 test;
@@ -19,8 +26,14 @@ contract Sample is Test, blah {
     function Sample() public {
         a = 17;
         b[0] = 9;
-        b[1] = 8;
+        b[1] = 302;
         b[2] = 7;
+        d[0].test = 7;
+        d[0].foo = 1337;
+        d[0].bar = 0x01234567890123456789;
+        d[1].test = 6;
+        d[1].foo = 1327;
+        d[1].bar = 0x01294567890123456789;
     }
 
     function test1() public {
@@ -87,12 +100,15 @@ contract Sample is Test, blah {
         uint t6;
         t6 = a;
         t0[0] = 7;
+        t0[2] = doCalc(7);
         t1 = true;
         t2 = -1;
         t2 = 5;
         t3 = msg.sender;
         t4 = byte(2);
         t5[0] = "hello";
+        t5[1] = "world";
+        t0[1] = 73;
         t1 = false; // for breakpoint purposes
     }
 
@@ -105,10 +121,13 @@ contract Sample is Test, blah {
     }
 
     function test9() public {
-        s memory sampleStruct;
-        sampleStruct.test = 7;
-        sampleStruct.foo = 1337;
-        sampleStruct.bar = 0x01234567890123456789;
+        s[2] memory sampleStruct;
+        sampleStruct[0].test = 7;
+        sampleStruct[0].foo = 1337;
+        sampleStruct[0].bar = 0x01234567890123456789;
+        sampleStruct[1].test = 5;
+        sampleStruct[1].foo = 1137;
+        sampleStruct[1].bar = 0x02224567890123456789;
     }
 
     function test10() public {
