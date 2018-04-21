@@ -121,13 +121,10 @@ contract Sample is Test, blah {
     }
 
     function test9() public {
-        s[2] memory sampleStruct;
-        sampleStruct[0].test = 7;
-        sampleStruct[0].foo = 1337;
-        sampleStruct[0].bar = 0x01234567890123456789;
-        sampleStruct[1].test = 5;
-        sampleStruct[1].foo = 1137;
-        sampleStruct[1].bar = 0x02224567890123456789;
+        s memory sampleStruct;
+        sampleStruct.test = 7;
+        sampleStruct.foo = 1337;
+        sampleStruct.bar = 0x01234567890123456789;
     }
 
     function test10() public {
