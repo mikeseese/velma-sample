@@ -23,6 +23,13 @@ contract Sample is Test, blah {
         address bar;
     }
 
+    enum e {
+        Hello,
+        wOrld,
+        GoodBye,
+        universe
+    }
+
     function Sample() public {
         a = 17;
         b[0] = 9;
@@ -98,10 +105,13 @@ contract Sample is Test, blah {
         byte t4;
         bytes5[2] memory t5;
         uint t6;
+        e t7;
         t6 = a;
+        t7 = e.Hello;
         t0[0] = 7;
         t0[2] = doCalc(7);
         t1 = true;
+        t7 = e.GoodBye;
         t2 = -1;
         t2 = 5;
         t3 = msg.sender;

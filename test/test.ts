@@ -133,6 +133,6 @@ describe("SdbSampleTest", () => {
 
     it("#sdbTest", async () => {
         // We want to trace the transaction that sets the value to 26
-        return contracts["Sample"].instance.methods.test9().call({from: accounts[0], gas: 3411592});
+        return contracts["Sample"].instance.methods.test6().call({from: accounts[0], gas: 3411592});
     });
 })
