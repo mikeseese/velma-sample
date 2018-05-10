@@ -12,7 +12,8 @@ contract blah {
 }
 
 contract Sample is Test, blah {
-    uint a;
+    e f;
+    uint8 a;
     uint16[3] b;
 
     s[2] d;
@@ -41,10 +42,11 @@ contract Sample is Test, blah {
         d[1].test = 6;
         d[1].foo = 1327;
         d[1].bar = 0x01294567890123456789;
+        f = e.wOrld;
     }
 
     function test1() public {
-        uint z = 1;
+        uint8 z = 1;
         a = a + z;
         a = 0;
     }
@@ -59,19 +61,19 @@ contract Sample is Test, blah {
         a = test3d();
     }
 
-    function test3a() private pure returns (uint) {
+    function test3a() private pure returns (uint8) {
         return test3b();
     }
 
-    function test3b() private pure returns (uint) {
+    function test3b() private pure returns (uint8) {
         return 2;
     }
 
-    function test3c() private pure returns (uint) {
+    function test3c() private pure returns (uint8) {
         return 3;
     }
 
-    function test3d() private pure returns (uint) {
+    function test3d() private pure returns (uint8) {
         return 4;
     }
 
@@ -79,21 +81,21 @@ contract Sample is Test, blah {
         a = test4a(10);
     }
 
-    function test4a(uint v) private pure returns (uint) {
+    function test4a(uint8 v) private pure returns (uint8) {
         v = v + 1;
         return v;
     }
 
     function test5() public {
-        uint256 newVal = 108;
-        uint256 nextVal = newVal / 2;
+        uint8 newVal = 108;
+        uint8 nextVal = newVal / 2;
         newVal += 1;
-        uint256 priorVal = nextVal * 2;
+        uint8 priorVal = nextVal * 2;
         a = test5a(priorVal, nextVal);
     }
 
-    function test5a(uint _val, uint v2) private pure returns (uint) {
-        uint nextVal = _val * 2 + v2;
+    function test5a(uint8 _val, uint8 v2) private pure returns (uint8) {
+        uint8 nextVal = _val * 2 + v2;
         return nextVal;
     }
 
