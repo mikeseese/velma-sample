@@ -18,6 +18,8 @@ contract Sample is Test, blah {
 
     s[2] d;
 
+    mapping(uint => uint) theMap;
+
     struct s {
         uint8 test;
         uint256 foo;
@@ -43,6 +45,7 @@ contract Sample is Test, blah {
         d[1].foo = 1327;
         d[1].bar = 0x01294567890123456789;
         f = e.wOrld;
+        theMap[12] = 1337;
     }
 
     function test1() public {
