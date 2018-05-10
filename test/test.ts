@@ -87,12 +87,12 @@ describe("SdbSampleTest", () => {
             const filePath = contracts[contract].path.replace(sourceRoot, "").replace(/\\/g, "/").replace(/^\//, "");
             contracts[contract].interface = new web3.eth.Contract(compilerOutput.contracts[filePath][contracts[contract].name].abi);
             contracts[contract].interface._code = "0x" + compilerOutput.contracts[filePath][contracts[contract].name].evm.bytecode.object;
-    
+
             return contracts[contract].interface.deploy({ data: contracts[contract].interface._code }).send({from: accounts[0], gas: 3141592}).then(instance => {
                 contracts[contract].instance = instance;
-    
+
                 addressMapping[contracts[contract].name] = instance._address;
-    
+
                 // TODO: ugly workaround - not sure why this is necessary.
                 if (!contracts[contract].instance._requestManager.provider) {
                     contracts[contract].instance._requestManager.setProvider(web3.eth._provider);
