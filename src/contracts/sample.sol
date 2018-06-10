@@ -46,6 +46,7 @@ contract Sample is Test, blah {
         d[1].bar = 0x01294567890123456789;
         f = e.wOrld;
         theMap[12] = 1337;
+        a = test3b();
     }
 
     function test1() public {
