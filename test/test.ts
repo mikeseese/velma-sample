@@ -82,6 +82,16 @@ describe("SdbSampleTest", () => {
         callback();
     });
 
+    before("link compiler output", (callback) => {
+        const sdbHook = ganacheProvider.manager.state.sdbHook;
+        if (sdbHook) {
+            sdbHook.linkCompilerOutput(sourceRoot, compilerOutput, callback);
+        }
+        else {
+            callback("sdbhook isn't defined. are you sure testrpc/ganache-core was initialized properly?");
+        }
+    });
+
     before("upload contracts", () => {
         for (const contract in contracts) {
             const filePath = contracts[contract].path.replace(sourceRoot, "").replace(/\\/g, "/").replace(/^\//, "");
@@ -98,16 +108,6 @@ describe("SdbSampleTest", () => {
                     contracts[contract].instance._requestManager.setProvider(web3.eth._provider);
                 }
             });
-        }
-    });
-
-    before("link compiler output", (callback) => {
-        const sdbHook = ganacheProvider.manager.state.sdbHook;
-        if (sdbHook) {
-            sdbHook.linkCompilerOutput(sourceRoot, compilerOutput, callback);
-        }
-        else {
-            callback("sdbhook isn't defined. are you sure testrpc/ganache-core was initialized properly?");
         }
     });
 
