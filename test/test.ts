@@ -20,6 +20,12 @@ describe("SdbSampleTest", () => {
             name: "Test",
             interface: null,
             instance: null
+        },
+        "Order.sol": {
+            path: joinPath(sourceRoot, "Order.sol"),
+            name: "Order",
+            interface: null,
+            instance: null
         }
     };
     const sdbPort = process.env.SDB_PORT ? parseInt(process.env.SDB_PORT) : null;

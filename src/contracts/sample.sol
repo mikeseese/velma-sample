@@ -1,6 +1,7 @@
 pragma solidity 0.4.18;
 
 import "test.sol";
+import "Order.sol";
 
 contract blah {
     uint c;
@@ -12,13 +13,20 @@ contract blah {
 }
 
 contract Sample is Test, blah {
-    e f;
-    uint8 a;
+    using Order for Order.Data;
+
+    address myAddr;
+    uint8 myUint;
+
     uint16[3] b;
+    uint8 a;
+    e f;
 
     s[2] d;
+    
+    mapping(uint => Order.Data) private orders;
 
-    mapping(uint => uint) theMap;
+    mapping(uint => s) theMap;
 
     struct s {
         uint8 test;
@@ -34,6 +42,7 @@ contract Sample is Test, blah {
     }
 
     function Sample() public {
+        c = 12345;
         a = 17;
         b[0] = 9;
         b[1] = 302;
@@ -45,7 +54,11 @@ contract Sample is Test, blah {
         d[1].foo = 1327;
         d[1].bar = 0x01294567890123456789;
         f = e.wOrld;
-        theMap[12] = 1337;
+        theMap[12].test = 7;
+        theMap[12].foo = 17779;
+        theMap[12].bar = 0x07484567890123456789;
+        myAddr = 0x75757575757575757575;
+        myUint = 13;
         a = test3b();
     }
 
@@ -137,10 +150,13 @@ contract Sample is Test, blah {
     }
 
     function test9() public {
-        s memory sampleStruct;
-        sampleStruct.test = 7;
-        sampleStruct.foo = 1337;
-        sampleStruct.bar = 0x01234567890123456789;
+        s storage sampleStruct;
+        uint16[3] b_pointer = b;
+        sampleStruct = theMap[0];
+        sampleStruct.test = 8;
+        sampleStruct.foo = 1338;
+        sampleStruct.bar = 0x08234567890123456789;
+        b_pointer[0] = 654;
     }
 
     function test10() public {
@@ -165,5 +181,27 @@ contract Sample is Test, blah {
         v8[0] = "";
         v9[0] = 0;
         v10[0][0] = 0;
+    }
+
+    function test11() public {
+        Order.Data storage _order = orders[0];
+        _order.orders = this;
+        _order.market = this;
+        _order.id = "wassup";
+        _order.orderType = Order.Types.Ask;
+        _order.outcome = 42;
+        _order.price = 2150;
+        test12(_order);
+        _order.amount = 100000000000;
+        _order.creator = msg.sender;
+        _order.moneyEscrowed = 215000000000000;
+        _order.sharesEscrowed = 0;
+        _order.betterOrderId = "hello";
+        _order.worseOrderId = "world";
+        _order.worseOrderId = "worlds";
+    }
+
+    function test12(Order.Data storage _order) private {
+        _order.price = _order.price + 1;
     }
 }
