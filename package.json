@@ -1,9 +1,9 @@
 {
-  "name": "sdb-sample",
-  "displayName": "SDB Sample Project",
+  "name": "velma-sample",
+  "displayName": "Velma Sample Project",
   "version": "1.0.0",
   "publisher": "SeesePlusPlus",
-  "description": "Visual Studio Code debug adapter for the sdb (Solidity Debugger) runtime",
+  "description": "Visual Studio Code debug adapter for the Velma Solidity Debugger runtime",
   "author": {
     "name": "Mike Seese",
     "email": "seesemichaelj@gmail.com"
@@ -12,7 +12,7 @@
     "solidity",
     "debug",
     "ethereum",
-    "sdb",
+    "velma",
     "sample"
   ],
   "engines": {
@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "async": "^2.6.0",
-    "ganache-core": "git+https://gitlab.com/seeseplusplus/ganache-core.git#sdb-1.0.0-rc.1",
+    "ganache-core": "seeseplusplus/ganache-core#introduce-velma",
     "mocha": "^3.5.0",
     "path": "^0.12.7",
     "solc": "0.4.18",
@@ -44,10 +44,10 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://git@gitlab.com/seeseplusplus/sdb-sample.git"
+    "url": "https://github.com/seeseplusplus/velma-sample.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/seeseplusplus/sdb-sample/issues"
+    "url": "https://github.com/seeseplusplus/velma-sample/issues"
   },
-  "homepage": "https://gitlab.com/seeseplusplus/sdb-sample#README"
+  "homepage": "https://github.com/seeseplusplus/velma-sample#README"
 }
