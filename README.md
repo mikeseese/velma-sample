@@ -5,6 +5,8 @@ For the scope of the [Augur bounty](https://github.com/AugurProject/augur-bounti
 
 I **highly recommend** you familiarize yourself with the test application found within this repository before integrating your own project.
 
+## :warning: Velma is alpha software! We're still working out a lot of kinks/bugs so please bare with us :warning:
+
 ## Get Status Updates About Releases!
 Follow me on Twitter at https://twitter.com/seeseplusplus to get updates about new releases/etc about Velma
 
