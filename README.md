@@ -1,4 +1,4 @@
-# <img src="https://user-images.githubusercontent.com/549323/41639879-a6eeb290-742d-11e8-8ece-bb1c292b407a.png" alt="" width="100" height="auto" valign="middle"> Velma Solidity Debugger -  Sample Project
+# <img src="https://user-images.githubusercontent.com/549323/41639879-a6eeb290-742d-11e8-8ece-bb1c292b407a.png" alt="" width="100" height="auto" valign="middle"> Velma Solidity Debugger - Sample Project
 This repository contains a sample project that uses the [Velma Solidity Debugger](https://github.com/seeseplusplus/velma) and associated [VS Code Extension](https://github.com/seeseplusplus/vscode-velma-debug).
 
 For the scope of the [Augur bounty](https://github.com/AugurProject/augur-bounties#-bounty-2-portable-solidity-debugger), the only way you can currently use the debugger is through Ganache (formally TestRPC). The recommended method is by setting up a Mocha test which will compile the contracts, upload them to the Ganache, link the debug symbols (aka compilation output and contract addresses) to Velma, and execute transactions.
