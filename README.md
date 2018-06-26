@@ -5,6 +5,9 @@ For the scope of the [Augur bounty](https://github.com/AugurProject/augur-bounti
 
 I **highly recommend** you familiarize yourself with the test application found within this repository before integrating your own project.
 
+## Get Status Updates About Releases!
+Follow me on Twitter at https://twitter.com/seeseplusplus to get updates about new releases/etc about Velma
+
 ## Usage
 1. Make sure you got the [prerequisites for Velma](https://github.com/seeseplusplus/vscode-velma-debug#prerequisites) installed
 1. Make sure you have the [Velma VS Code Extension](https://github.com/seeseplusplus/vscode-velma-debug) installed
