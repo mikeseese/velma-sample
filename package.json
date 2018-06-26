@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "async": "^2.6.0",
-    "ganache-core": "seeseplusplus/ganache-core#introduce-velma",
+    "ganache-core": "git://github.com/seeseplusplus/ganache-core#introduce-velma",
     "mocha": "^3.5.0",
     "path": "^0.12.7",
     "solc": "0.4.18",
