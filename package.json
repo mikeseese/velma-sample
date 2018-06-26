@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "async": "^2.6.0",
-    "ganache-core": "git+https://gitlab.com/seeseplusplus/ganache-core.git#sdb-1.0.0-rc.1",
+    "ganache-core": "git+https://github.com/seeseplusplus/ganache-core.git#1.0.0-rc.1",
     "mocha": "^3.5.0",
     "path": "^0.12.7",
     "solc": "0.4.18",
