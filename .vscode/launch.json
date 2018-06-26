@@ -4,7 +4,7 @@
     {
       "type": "sdb",
       "request": "launch",
-      "name": "SDB",
+      "name": "Velma",
       //"debugServer": 4711,
       "stopOnEntry": false,
       "port": 8455
@@ -27,8 +27,8 @@
   ],
   "compounds": [
     {
-      "name": "SDB & Test",
-      "configurations": [ "SDB", "Tests" ]
+      "name": "Velma & Test",
+      "configurations": [ "Velma", "Tests" ]
     }
   ]
 }
