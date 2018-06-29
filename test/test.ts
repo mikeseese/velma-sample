@@ -1,4 +1,4 @@
-import { provider } from "ganache-core";
+import { provider } from "@velma/ganache-core";
 import { CompilerInput, CompilerOutput, compileStandardWrapper } from "solc";
 import { join as joinPath } from "path";
 import { readFileSync } from "fs";
